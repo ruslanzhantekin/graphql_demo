@@ -1,0 +1,11 @@
+mutation AddQty($itemId: String!) {
+    addQnt(cartItemId: $itemId) {
+        qnt
+    }
+}
+
+mutation RemoveQty($itemId: String!) {
+    removeQnt(cartItemId: $itemId) {
+        qnt
+    }
+}

@@ -1,0 +1,25 @@
+<h2>Cart</h2>
+
+<h3> Subtotal {{ this.data?.cart?.subtotal}}</h3>
+
+<table [ngStyle]="{ width: '50%'}">
+    <tr>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Total</th>
+        <th>Qty</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let item of data?.cart?.items">
+        <td>{{ item.product.title }}</td>
+        <td>{{ item.product.price }}</td>
+        <td>{{ item.total }}</td>
+        <td>{{ item.qnt }}</td>
+        <td> <button (click)="addQty(item.id)">+</button>&nbsp;<button (click)="removeQty(item.id)">-</button> </td>
+    </tr>
+</table>
+<!--
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

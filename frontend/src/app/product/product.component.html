@@ -1,0 +1,20 @@
+<h2>{{ this.data?.product?.title }} | {{ this.data?.product?.price }}$ | SKU: {{this.data?.product?.sku}}</h2>
+
+<div class="row">
+    <h3>Description</h3>
+    <br>
+    {{ this.data?.product?.description }}
+    <br>
+    <h3>Main pic</h3>
+    <br>
+    <img src="{{ this.data?.product?.image }}">
+    <br>
+    <h3>Images</h3>
+    <br>
+    <img src="{{ image }}" *ngFor="let image of data?.product?.images">
+</div>
+<!--
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

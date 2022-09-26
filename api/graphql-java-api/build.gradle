@@ -1,0 +1,27 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group = 'com.dailybugle'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        mavenCentral()
+    }
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDir '../graphql-api'
+        }
+    }
+}

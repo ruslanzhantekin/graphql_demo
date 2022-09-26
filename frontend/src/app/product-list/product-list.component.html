@@ -1,0 +1,21 @@
+<h2>Products</h2>
+
+<div class="row">
+    <div *ngFor="let product of data?.products" class="column cart-item">
+        <div [ngStyle]="{ width: '100%' }">
+            <img src="{{ product.image }}" width="100%">
+        </div>
+        <div>
+            <a routerLink="/product/{{ product.id }}">
+                <h3>{{ product.title }}</h3>
+            </a>
+            <br>
+            {{ product.price }}$
+        </div>
+    </div>
+</div>
+<!--
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

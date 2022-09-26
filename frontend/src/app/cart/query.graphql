@@ -1,0 +1,14 @@
+query FetchCart {
+    cart {
+        subtotal
+        items {
+            id
+            product {
+                title
+                price
+            }
+            qnt
+            total
+        }
+    }
+}

@@ -1,0 +1,8 @@
+query FetchAllProducts {
+    products {
+        id
+        title
+        price
+        image
+    }
+}

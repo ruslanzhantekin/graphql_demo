@@ -1,0 +1,61 @@
+type Query {
+    """
+    Get all products
+    """
+    products: [Product!]!
+
+#    """
+#    !! For example
+#    """
+#    productsWithPagination(pagination: Pagination!): [Product!]!
+
+    # Get single product by id
+    product(id: String!): Product
+
+    """
+    Get cart by id
+
+    Some additional info
+    """
+    cart: Cart
+}
+
+input Pagination {
+    pageNumber: Int!
+    pageSize: Int!
+}
+
+type Mutation {
+    """
+    increase item count
+    """
+    addQnt(cartItemId: String): CartItem
+
+    removeQnt(cartItemId: String): CartItem
+}
+
+type Product {
+    id: String!
+    title: String!
+    description: String
+    price: Float!
+    image: String!
+    images: [String!]!
+    sku: String
+}
+
+type Cart {
+    id: String
+    items: [CartItem!]!
+    subtotal: Float!
+}
+
+type CartItem {
+    id: String!
+    total: Float!
+    qnt: Int!
+    product: Product!
+    cart: Cart!
+}
+
+union CartProduct = Product | Cart
